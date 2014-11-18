@@ -1,6 +1,6 @@
 {
   "name": "express-json-mask",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Express middleware for filtering the json responses",
   "keywords": [
     "JSON",
@@ -19,17 +19,12 @@
   "main": "core.js",
   "dependencies": {
     "6to5": "^1.12.20",
-    "debug": "^2.1.0",
-    "grunt": "^0.4.5",
-    "grunt-6to5": "^1.0.1",
-    "grunt-add-comment": "^1.1.1",
     "json-mask": "^0.3.2"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
     "time-grunt": "^1.0.0",
     "grunt-6to5": "^1.0.0",
-    "grunt-add-comment": "^1.0.1",
-    "johto-require": "latest"
+    "grunt-add-comment": "^1.0.1"
   }
 }
