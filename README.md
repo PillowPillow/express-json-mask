@@ -41,7 +41,16 @@ Express middleware for filtering the JSON responses
         // -------------------------------------------
         // example: xxx.json(json);
         // curl: http://localhost:1337/?fields=type
-        // response: {}
+        // -- the filter does not match any fields in the  root of the json
+        // response: {
+        //      name: 'Express',
+        //      version: 'version',
+        //      description: 'description',
+        //      repository: {
+        //          type: 'git',
+        //          url: 'url'
+        //      }
+        //  }
         // -------------------------------------------
         // example: xxx.json(json);
         // curl: http://localhost:1337/?fields=name,version,repository(url)
