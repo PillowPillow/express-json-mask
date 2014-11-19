@@ -9,7 +9,6 @@ paths.base = Path.normalize(__dirname);
 Grunt = function(grunt) {
 	var tasks = [
 		'grunt-6to5',
-		'johto-require',
 		'grunt-add-comment',
 	];
 	for(var i = 0; i < tasks.length; i++) {
@@ -33,21 +32,6 @@ Grunt = function(grunt) {
 	}
 
 	configuration.package = grunt.file.readJSON('package.json');
-
-	configuration.johto_require = {
-		'6to5': {
-			options: {
-				match: 'Symbol|Promise|regeneratorRuntime',
-				insert: 'require("6to5/polyfill");'
-			},
-			files: [{
-				expand: true,
-				cwd: paths.base,
-				src: ( pathOption ? [ pathOption.name.replace('.es6', '.js') ] :  ['lib/**/*.js']),
-				dest: paths.base
-			}]
-		}
-	};
 
 	configuration['6to5'] = {
 		options: {
@@ -84,7 +68,7 @@ Grunt = function(grunt) {
 
 	grunt.initConfig(configuration);
 
-	grunt.registerTask('es6', ['6to5:dist', 'johto_require:6to5', 'add_comment']);
+	grunt.registerTask('es6', ['6to5:dist', 'add_comment']);
 };
 
 module.exports = Grunt;
