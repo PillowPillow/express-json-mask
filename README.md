@@ -30,9 +30,14 @@ Express middleware for filtering the JSON responses
         response.status(200).json(json/*, [optional] filtering target*/);
         // example: xxx.json(json, 'repository');
         // curl: http://localhost:1337/?fields=type
-        // response: {
-        //      type: 'git'
-        // }
+        // response: { 
+        //      name: 'Express',
+        //      version: 'version',
+        //      description: 'description',
+        //      repository: {
+        //          type: 'git',
+        //      } 
+        //  }
         // -------------------------------------------
         // example: xxx.json(json);
         // curl: http://localhost:1337/?fields=type
